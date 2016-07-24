@@ -22,6 +22,11 @@ https://www.udemy.com/python-jp/learn/v4/overview
 ### N-dimensional Array (numpy.ndarray)
 http://docs.scipy.org/doc/numpy/reference/arrays.html
 
+- To serialize an array:
+  - numpy.save(filename, arr)
+  - numpy.savez(filename, k=v...)
+  - numpy.savetxt(filename, arr, delimiter=',')
+
 ### Universal Function (numpy.ufunc)
 A universal function is a function that operates on ndarrays in an element-by-element fashion.
 http://docs.scipy.org/doc/numpy/reference/ufuncs.html
@@ -30,12 +35,6 @@ http://docs.scipy.org/doc/numpy/reference/ufuncs.html
 - numpy.sum() can take an axis as a parameter.
   - sum(axis=0) returns sums of each row.
   - sum(axis=1) returns sums of each column.
-
-
-## I/O
-- numpy.save(filename, arr)
-- numpy.savez(filename, k=v...)
-- numpy.savetxt(filename, )
 
 ## Matplotlib.pyplot
 
