@@ -1,7 +1,7 @@
 # Notes: Learning Python for Data Analysis and Visualization
 
-## Japanese version
-https://www.udemy.com/python-jp/learn/v4/overview
+- Japanese version
+  - https://www.udemy.com/python-jp/learn/v4/overview
 
 ## Jupyter
 - `%` : magic
@@ -15,6 +15,7 @@ https://www.udemy.com/python-jp/learn/v4/overview
   - k,j: up/down
 - In edit mode
   - Esc: => command mode
+  - Tab: Completion
   - Shift+Enter => Run code and go to next cell
   - Control+Enter => Run code only
 
@@ -35,6 +36,33 @@ http://docs.scipy.org/doc/numpy/reference/ufuncs.html
 - numpy.sum() can take an axis as a parameter.
   - sum(axis=0) returns sums of each row.
   - sum(axis=1) returns sums of each column.
+
+
+## Pandas
+### Series
+- Labeled 1-dimensional array
+  - Something like a table with two columns (key & value).
+  - s.index returns the label information of the series.
+  - s.values returns numpy.ndarray (dropping label information)
+  - An index can have a name (= "key column name")
+  - A series itself can have a name (= "value column name").
+- you can use it like dict.
+  - `s[index]` : simple lookup
+  - `s[s > value_threshold]` : filter by bool-value dict.
+- Operations work per label.
+  - `s1 + s2` pairs values with the same index and adds them.
+
+### DataFrame
+- `pd.read_clipboard()` is useful.
+- Access a column by `df['hoge']` or `df.hoge`. A Series is returned.
+- Access a subset of columns of a dataframe: `df[['hoge', 'piyo']]`
+- Series != signle-column DataFrame
+  - `df['hoge']` vs `df[['hoge']]`. They are different things.
+- Copy a data frame.
+  - `pd.DataFrame(df, columns=['hoge', 'piyo'])`
+- `df.head()` and `df.tail()`
+- `df.ix` is a special column (index; primary key)
+  - index is immutable.
 
 ## Matplotlib.pyplot
 
