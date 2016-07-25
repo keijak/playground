@@ -32,10 +32,12 @@ http://docs.scipy.org/doc/numpy/reference/arrays.html
 A universal function is a function that operates on ndarrays in an element-by-element fashion.
 http://docs.scipy.org/doc/numpy/reference/ufuncs.html
 
-- numpy.transpose() is the more flexible version of T.
-- numpy.sum() can take an axis as a parameter.
-  - sum(axis=0) returns sums of each row.
-  - sum(axis=1) returns sums of each column.
+- `numpy.transpose()` is the more flexible version of T.
+- `numpy.sum()` can take an axis as a parameter.
+  - `sum(axis=0)` returns sums over the rows. `axis=0` is the default value.
+  - `sum(axis=1)` returns sums over the columns.
+- `min`, `max`, `cumsum`
+- `describe` shows common statistics of each column.
 
 
 ## Pandas
@@ -55,6 +57,8 @@ http://docs.scipy.org/doc/numpy/reference/ufuncs.html
   - `s[label]` : label is the index.
   - `s[i]` : no matter what the index is, you can access an item like an array.
   - `s[i:j]` : slice also works
+- `s.sort_index()` and `s.sort_values()` returns a new series without modifying the original series. When `inplace=True` is given, it mutates itself.
+
 ### DataFrame
 - `pd.read_clipboard()` is useful.
 - Access a column by `df['hoge']` or `df.hoge`. A Series is returned.
@@ -80,11 +84,11 @@ import matplotlib.pyplot as plt
 ```
 
 ### imshow(a)
-You can simply pass an 2d-array to plt.imshow().
+You can simply pass an 2d-array to `plt.imshow()`.
 It maps each value to a colored dot.
 
 ### Color bar (which color means what) and title of the chart.
-Call the functions _after_ plt.imshow()
+Call the functions _after_ `plt.imshow()`.
 ```
 plt.imshow(z)
 plt.colorbar()
