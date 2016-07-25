@@ -83,7 +83,7 @@ import matplotlib.pyplot as plt
 %matplotlib inline
 ```
 
-### imshow(a)
+### imshow
 You can simply pass an 2d-array to `plt.imshow()`.
 It maps each value to a colored dot.
 
@@ -94,3 +94,10 @@ plt.imshow(z)
 plt.colorbar()
 plt.title('hoge')
 ```
+
+
+## Time series Analysis
+- Use a `DataFrame` whose index is date and value is number.
+- `df.pct_change()` computes diff from previous day by percent.
+- `df.corr()` computes correlation matrix.
+  - To visualize the correlation matrix, use `seaborn.heatmap(df.corr())`
