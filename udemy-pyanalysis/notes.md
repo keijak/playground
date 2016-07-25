@@ -51,7 +51,10 @@ http://docs.scipy.org/doc/numpy/reference/ufuncs.html
   - `s[s > value_threshold]` : filter by bool-value dict.
 - Operations work per label.
   - `s1 + s2` pairs values with the same index and adds them.
-
+- Access item
+  - `s[label]` : label is the index.
+  - `s[i]` : no matter what the index is, you can access an item like an array.
+  - `s[i:j]` : slice also works
 ### DataFrame
 - `pd.read_clipboard()` is useful.
 - Access a column by `df['hoge']` or `df.hoge`. A Series is returned.
@@ -62,7 +65,12 @@ http://docs.scipy.org/doc/numpy/reference/ufuncs.html
   - `pd.DataFrame(df, columns=['hoge', 'piyo'])`
 - `df.head()` and `df.tail()`
 - `df.ix` is a special column (index; primary key)
+  - `df.ix[hoge]` works like `series[hoge]`.
+  - returns a Series whose index is the DataFrame's columns.
   - index is immutable.
+- missing cell becomes `NaN`.
+- `df + s` : regards `s` as a DataFrame of the same shape as `df` where each row is the series.
+  - Series' index becomes the DataFrame's columns.
 
 ## Matplotlib.pyplot
 
