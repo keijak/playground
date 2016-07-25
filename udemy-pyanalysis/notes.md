@@ -44,7 +44,7 @@ http://docs.scipy.org/doc/numpy/reference/ufuncs.html
 ### Series
 - Labeled 1-dimensional array
   - Something like a table with two columns (key & value).
-  - s.index returns the label information of the series.
+  - s.index returns the list of labels of the series.
   - s.values returns numpy.ndarray (dropping label information)
   - An index can have a name (= "key column name")
   - A series itself can have a name (= "value column name").
@@ -69,9 +69,17 @@ http://docs.scipy.org/doc/numpy/reference/ufuncs.html
   - `pd.DataFrame(df, columns=['hoge', 'piyo'])`
 - `df.head()` and `df.tail()`
 - `df.ix` is a special column (index; primary key)
-  - `df.ix[hoge]` works like `series[hoge]`.
+  - `df.ix[rows (, columns)]` works like `series[index]`.
+    - You can specify labels or positions, as well as a slice or a list of labels or positions as selectors of the rows and the columns.
+    - You can omit column selection to select all columns.
+    - You can specify `:` to select all rows. e.g. `df[:,['A','B']]`
   - returns a Series whose index is the DataFrame's columns.
   - index is immutable.
+  - Explicitly use `df.loc` and `df.iloc`.
+    - `df.ix` is ゆるふわ. It has tricky fallback mechanism.
+    - http://d.hatena.ne.jp/sleepy_yoshi/20150514/p1
+    - http://stackoverflow.com/questions/31593201/pandas-iloc-vs-ix-vs-loc-explanation
+
 - missing cell becomes `NaN`.
 - `df + s` : regards `s` as a DataFrame of the same shape as `df` where each row is the series.
   - Series' index becomes the DataFrame's columns.
