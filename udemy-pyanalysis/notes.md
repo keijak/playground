@@ -2,10 +2,14 @@
 
 - Japanese version
   - https://www.udemy.com/python-jp/learn/v4/overview
+- Materials
+  - http://www.tsjshg.info/udemy/notebooks.html
+
 
 ## Jupyter
 - `%` : magic
 - `!` : shell command
+
 
 ### Keyboard shortcut
 - In command mode
