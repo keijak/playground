@@ -80,7 +80,9 @@ http://docs.scipy.org/doc/numpy/reference/ufuncs.html
     - http://d.hatena.ne.jp/sleepy_yoshi/20150514/p1
     - http://stackoverflow.com/questions/31593201/pandas-iloc-vs-ix-vs-loc-explanation
 
-- missing cell becomes `NaN`.
+- missing cell becomes NaN.
+  - `df.dropna()` drops records that contains NaN.
+  - `df.fillna(c)` fills NaN cells with `c`.
 - `df + s` : regards `s` as a DataFrame of the same shape as `df` where each row is the series.
   - Series' index becomes the DataFrame's columns.
 
